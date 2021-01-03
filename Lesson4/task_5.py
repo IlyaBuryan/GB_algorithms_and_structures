@@ -66,12 +66,15 @@ print(simple(i4))
 def erat_fun(n):
     """С идеей «Решета Эратосфена»"""
     prime = [2, 3]
-    i = 4
-    while len(prime) < n:
-        if all(map(lambda k: i % k != 0, prime)):
-            prime.append(i)
-        i += 1
-    return prime[-1]
+    if n == 1:
+        return prime[0]
+    else:
+        i = 4
+        while len(prime) < n:
+            if all(map(lambda k: i % k != 0, prime)):
+                prime.append(i)
+            i += 1
+        return prime[-1]
 
 
 print(erat_fun(i1))
